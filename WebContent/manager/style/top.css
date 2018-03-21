@@ -1,0 +1,121 @@
+#menu {
+	height: 33px;
+	background: #203fa0 url(images/menu_bg.gif) left top repeat-x;
+}
+
+#menu div {
+	background: url(images/menu_bg_l.gif) left top no-repeat;
+	height: 100%;
+	padding-left: 25px;
+}
+
+#menu a {
+	display: block;
+	float: left;
+	height: 33px;
+	line-height: 33px;
+	font-size: 14px;
+	font-weight: bold;
+	color: #fff;
+	margin-right: 15px;
+	padding-left: 5px;
+	text-decoration: none;
+}
+
+#menu a span {
+	display: block;
+	padding-right: 5px;
+	height: 100%;
+	cursor: pointer;
+	float: left;
+}
+
+#menu a.on,#menu a:hover {
+	background: url(images/menu_bg_on.gif) top left no-repeat;	
+}
+
+#menu a.on span,#menu a:hover span {
+	background: url(images/menu_bg_on.gif) top right no-repeat;
+}
+
+#menu b {
+	display: block;
+	width: 2px;
+	height: 33px;
+	float: left;
+	background: url(images/menu_split.gif);
+	margin-right: 15px;
+}
+
+#menu form {
+	position: absolute;
+	right: 10px;
+	top: 5px;
+}
+
+#sub_menu {
+	border: 1px solid #dadada;
+	background: #f2f3f6;
+	line-height: 22px;
+	color: 9b9a9a;
+	padding-top: 3px;
+	overflow: hidden;
+	clear: both;
+	zoom: 1;
+	position: relative;
+}
+
+#sub_menu div {
+	background: url(images/menu_bg_l.gif) left top no-repeat;
+	height: 100%;
+	padding-left: 25px;
+}
+
+#sub_menu ul {
+	margin-left: -1px;
+	zoom: 1;
+}
+
+#sub_menu ul li {
+	float: left;
+	padding-left: 8px;
+	background: url(images/split1.gif) left center no-repeat;
+	list-style: none;
+	margin-right: 8px
+}
+
+#sub_menu a {
+	display: block;
+	float: left;
+	height: 22px;
+	line-height: 22px;
+	padding-left: 8px;
+	color: #333;
+	overflow: hidden;
+	text-decoration: none;
+}
+
+#sub_menu a nobr {
+	padding-right: 8px;
+	cursor: pointer;
+	line-height: 22px;
+	display: block;
+	float: left;
+	zoom: 1;
+}
+
+#sub_menu li.on a {
+	background: #fff;
+	background: url(images/submenu_bg.gif) left top no-repeat;
+}
+
+#sub_menu li.on a nobr {
+	background: url(images/submenu_bg.gif) right top no-repeat;
+}
+
+#sub_menu .ad {
+	position: absolute;
+	right: 10px;
+	top: 0;
+	line-height: 22px;
+}

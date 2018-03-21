@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "struts-2.0.dtd">
+<struts>
+	<package name="sys" extends="struts-default" namespace="/sys">
+		<action name="core_*"
+			class="com.sincinfo.zxks.core.sys.LoginAction" method="{1}">
+			<result name="strat">/manager/start.jsp</result>
+			<result name="error">/manager/Dibutu.jsp</result>
+		</action>
+	</package>
+	
+	<package name="needs" extends="struts-default" namespace="/needs">
+		<action name="todo_*"
+			class="com.sincinfo.zxks.core.sys.NeedsToDoAction" method="{1}">
+			<result name="needsToDo">/manager/front/needToDo.jsp</result>
+		</action>
+	</package>
+</struts>

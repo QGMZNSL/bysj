@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "struts-2.0.dtd">
+<struts>	
+	<package name="test" extends="struts-default" namespace="/test">
+		<action name="test_*"  class="com.sincinfo.zxks.test.HelloWorld" method="{1}">
+		</action>
+		
+		<action name="dbuse_*"  class="com.sincinfo.zxks.test.DbUseInfo" method="{1}">
+		</action>
+	</package>
+</struts>

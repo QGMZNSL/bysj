@@ -1,0 +1,4 @@
+body{font-size:12px;color:#333;text-align:center;}
+.warp{ margin:0 auto; width:1000px; border:#ffffff1px solid; margin-top:30px;}
+.bot_bg{background-image: url(../image/login_bg.jpg);height:500px;width:1000px;background-repeat:no-repeat;background-size:500px 500px;}
+.login{position:absolute; left:400px; top:190px;width:260px; border:#c0c0c0 2px solid;}

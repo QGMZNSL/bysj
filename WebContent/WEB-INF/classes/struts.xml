@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	<constant name="struts.custom.i18n.resources" value="message"></constant>
+	<constant name="struts.action.extension" value="action,do"></constant>
+	<constant name="struts.locale" value="zh_CN"></constant>
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.multipart.maxSize" value="10995116277760" />
+
+	<package name="struts-river" extends="struts-default"
+		abstract="true">
+		<!-- 定义拦截器 -->
+		<interceptors>
+			<interceptor name="validate"
+				class="org.river.nbf.interceptor.RiverInterceptor" />
+			<interceptor-stack name="validateGroup">
+				<interceptor-ref name="defaultStack">
+					<!-- 上传允许文件的类型-->
+					<param name="fileUpload.allowedTypes">
+						application/octet-stream,image/pjpeg,image/gif,image/x-png,application/x-shockwave-flash,application/vnd.ms-excel,application/msword,text/xml,text/plain,application/pdf
+					</param>
+				</interceptor-ref>
+				<interceptor-ref name="validate" />
+			</interceptor-stack>
+		</interceptors>
+
+		<!-- 默认拦截器 -->
+		<default-interceptor-ref name="validateGroup" />
+
+		<global-results>
+			<!-- 验证拦截器失败返回的页面 -->
+			<result name="rivererrintp">/common/jsp/river_err_intp.jsp</result>
+		</global-results>
+	</package>
+	
+<!-- demo 
+	<include file="site/firstpage.xml"></include>
+ -->
+ 
+ 	<!-- HELLO WOULD -->
+	<include file="com/sincinfo/zxks/test/action_test.xml"></include>
+	
+	<!-- 系统功能 -->
+	<include file="com/sincinfo/zxks/core/sys/action_sys.xml"></include>
+	
+	<!-- 菜单树 -->
+	<include file="com/sincinfo/zxks/common/tree/action_tree.xml"></include>
+	
+	<!-- 日常管理 -->
+	<include file="com/sincinfo/zxks/core/day/action_day.xml"></include>
+	
+	<!-- 专业计划库 yuansh -->
+	<include file="com/sincinfo/zxks/core/plan/action_plan.xml"></include>
+	
+	<!-- 摄像点管理 -->
+	<include file="com/sincinfo/zxks/core/camera/action_camera.xml"></include>
+	<!-- 用户帮助管理 -->
+	<include file="com/sincinfo/zxks/help/manage_help.xml"></include>
+</struts>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "struts-2.0.dtd">
+<struts>
+	<package name="plan" extends="struts-default" namespace="/plan">
+		<!--报考层次 -->
+		<action name="level_*"  class="com.sincinfo.zxks.core.plan.LevelAction" method="{1}">
+			<result name="Show">/manager/plan/examplan/levelShow.jsp</result>
+			<result name="Add">/manager/plan/examplan/levelAdd.jsp</result>
+			<result name="Edit">/manager/plan/examplan/levelEdit.jsp</result>
+		</action>
+		<!--专业类型-->
+		<action name="protype_*"  class="com.sincinfo.zxks.core.plan.ProtypeAction" method="{1}">
+			<result name="Show">/manager/plan/examplan/professionalType.jsp</result>
+			<result name="Add">/manager/plan/examplan/professionalTypeAdd.jsp</result>
+			<result name="Edit">/manager/plan/examplan/professionalTypeEdit.jsp</result>
+		</action>		
+		<!--专业分类设置 -->
+		<action name="proseq_*"  class="com.sincinfo.zxks.core.plan.ProseqAction" method="{1}">
+			<result name="Show">/manager/plan/examplan/professionalSep.jsp</result>
+			<result name="Add">/manager/plan/examplan/professionalSepAdd.jsp</result>
+			<result name="Edit">/manager/plan/examplan/professionalSepEdit.jsp</result>
+		</action>	
+		<!--专业设置-->
+		<action name="basepro_*"  class="com.sincinfo.zxks.core.plan.BaseproAction" method="{1}">
+			<result name="Show">/manager/plan/examplan/professional.jsp</result>
+			<result name="Add">/manager/plan/examplan/professionalAdd.jsp</result>
+			<result name="Edit">/manager/plan/examplan/professionalEdit.jsp</result>
+		</action>
+		<!--专业设置 考籍-->
+		<action name="baseprokj_*"  class="com.sincinfo.zxks.core.plan.BaseproKjAction" method="{1}">
+			<result name="Show">/manager/plan/examplan/professional_kj.jsp</result>
+			<result name="Add">/manager/plan/examplan/professionalAdd_kj.jsp</result>
+			<result name="Edit">/manager/plan/examplan/professionalEdit_kj.jsp</result>
+		</action>
+		<!--主考院校设置 -->
+		<action name="baseacademy_*"  class="com.sincinfo.zxks.core.plan.AcademyAction" method="{1}">
+			<result name="Show">/manager/plan/examplan/academyShow.jsp</result>
+			<result name="Add">/manager/plan/examplan/academyAdd.jsp</result>
+			<result name="Edit">/manager/plan/examplan/academyEdit.jsp</result>
+			<result name="Proset">/manager/plan/examplan/academyProfessionalSet.jsp</result>
+			<result name="SelPro">/manager/plan/sctProfession.jsp</result>
+		</action>
+		<!--教材设置-->
+		<action name="textbook_*"  class="com.sincinfo.zxks.core.plan.TextbookAction" method="{1}">
+			<result name="Show">/manager/plan/examplan/textbookShow.jsp</result>
+			<result name="Add">/manager/plan/examplan/textbookAdd.jsp</result>
+			<result name="Edit">/manager/plan/examplan/textbookEdit.jsp</result>
+		</action>	
+		<!--课程设置-->
+		<action name="syllabus_*"  class="com.sincinfo.zxks.core.plan.SyllabusAction" method="{1}">
+			<result name="Show">/manager/plan/examplan/syllabusShow.jsp</result>
+			<result name="Add">/manager/plan/examplan/syllabusAdd.jsp</result>
+			<result name="Edit">/manager/plan/examplan/syllabusEdit.jsp</result>
+			<result name="TBookSct">/manager/plan/sctTextbook.jsp</result>
+			<result name="textBook">/manager/plan/sctTextbookPro.jsp</result>
+		</action>	
+		<!-- 选择专业(教材) -->
+		
+		<!-- 专业课程关系设置 -->
+		<action name="proSyllabus_*"  class="com.sincinfo.zxks.core.plan.ProSyllabusAction" method="{1}">
+			<result name="Show">/manager/plan/examplan/prolessonRelation.jsp</result>
+			<result name="Add">/manager/plan/examplan/syllabusAdd.jsp</result>
+			<result name="Edit">/manager/plan/examplan/syllabusEdit.jsp</result>
+			<result name="syllabusSet">/manager/plan/examplan/prolessonRelationEdit.jsp</result>
+			<result name="syllabusSel">/manager/plan/sctSubject.jsp</result>
+			<result name="selProSyllabus">/manager/plan/sctSubjectPro.jsp</result>
+			<result name="syllView">/manager/plan/examplan/syllView.jsp</result>
+			<result name="graCond">/manager/plan/examplan/prolessonGraCondEdit.jsp</result>
+			<result name="syllabusOrderby">/manager/plan/examplan/syllabusOrderby.jsp</result>
+		</action>	
+		<!-- 课程分组设置 -->
+		<action name="grpSet_*"  class="com.sincinfo.zxks.core.plan.GrpSetAction" method="{1}">
+			<result name="Show">/manager/plan/examplan/grpSettingShow.jsp</result>
+			<result name="Add">/manager/plan/examplan/grpSettingAdd.jsp</result>
+			<result name="Edit">/manager/plan/examplan/grpSettingEdit.jsp</result>
+			<result name="GrpSettSyllabus">/manager/plan/examplan/grpSettingSetSyllabus.jsp</result>
+			<result name="GrpSetGroup">/manager/plan/examplan/grpSettingSetGroup.jsp</result>
+		</action>
+		<!-- 免考设置 -->	
+		<action name="avoidExamSet_*"  class="com.sincinfo.zxks.core.plan.AvoidExamSetAction" method="{1}">
+			<result name="Show">/manager/plan/examplan/avoidExamSetting.jsp</result>
+			<result name="Add">/manager/plan/examplan/avoidExamSettingEdit.jsp</result>
+			<result name="Edit">/manager/plan/examplan/syllabusEdit.jsp</result>
+			<result name="AvoidExamSet">/manager/plan/examplan/avoidExamSettingEdit.jsp</result>
+		</action>
+		<!--课程顶替设置 -->	
+		<action name="subStitute_*"  class="com.sincinfo.zxks.core.plan.SubstituteAction" method="{1}">
+			<result name="Show">/manager/plan/examplan/substituteShow.jsp</result>
+			<result name="syllabusSel">/manager/plan/sctSubject.jsp</result>
+			<result name="SubStituteSet">/manager/plan/examplan/substituteEdit.jsp</result>
+			<result name="substituteGroup">/manager/plan/examplan/substituteGroupShow.jsp</result>	
+		</action>		
+		<!--课程顶替分组 -->	
+		<action name="substituteGroup_*"  class="com.sincinfo.zxks.core.plan.SubstituteGroupAction" method="{1}">
+			<result name="Show">/manager/plan/examplan/substituteGroupShow.jsp</result>
+			<result name="Add">/manager/plan/examplan/substituteGroupAdd.jsp</result>
+			<result name="Edit">/manager/plan/examplan/substituteGroupEdit.jsp</result>			
+			<result name="SubStituteSet">/manager/plan/examplan/substituteGroupSetting.jsp</result>
+			<result name="SubstituteGroup">/manager/plan/examplan/substituteGroupShow.jsp</result>	
+		</action>
+		<!-- 专业知识汇编 -->
+		<action name="planInfos_*"  class="com.sincinfo.zxks.core.plan.PlanInfosAction" method="{1}">
+			<result name="Show">/manager/plan/examplan/planInfos.jsp</result>
+		</action>
+		
+		<!-- 毕业条件设置 -->
+		<action name="graduateCondition_*"  class="com.sincinfo.zxks.core.plan.GraduateConditionAction" method="{1}">
+			<result name="Show">/manager/plan/statusplan/graduateCondition.jsp</result>
+			<result name="Edit">/manager/plan/statusplan/graduateConditionEdit.jsp</result>
+		</action>
+	</package>
+	
+	<package name="examarrange" extends="struts-default" namespace="/manager/plan/examarrange">
+		<!-- 全国统考课程考试安排 -->
+		<action name="exam_*"  class="com.sincinfo.zxks.core.plan.examarrange.ExamArrangeAction" method="{1}">
+			<result name="show">/manager/plan/examarrange/examArrangement.jsp</result>
+			<result name="difference">/manager/plan/examarrange/difference.jsp</result>
+			<result name="excel">/manager/plan/examarrange/excel.jsp</result>
+			<result name="excelMess">/manager/plan/examarrange/excelMess.jsp</result>
+			<result name="autoExcelMess">/manager/plan/examarrange/autoExcelMess.jsp</result>
+			<result name="newchange">/manager/plan/examarrange/newchange.jsp</result>
+			<result name="modchange">/manager/plan/examarrange/modchange.jsp</result>
+			<result name="autoExcel">/manager/plan/examarrange/autoExcel.jsp</result>
+			<result name="history">/manager/plan/examarrange/copyMess.jsp</result>
+		</action>
+		
+		<!-- 开考专业课程校对 by duanwj 2013-4-16 -->
+		<action name="collate_*"  class="com.sincinfo.zxks.core.plan.examarrange.ExamSyllabusCollateAction" method="{1}">
+			<result name="syllabus">/manager/plan/examarrange/examSyllabusCollate.jsp</result>
+			<result name="syllabustime">/manager/plan/examarrange/syllabustime.jsp</result>
+		</action>
+	</package>
+</struts>

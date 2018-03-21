@@ -1,0 +1,12 @@
+@charset "utf-8";
+body,ul,li{margin:0px; padding:0px; list-style:none;}
+body{ width:230px; font-size:12px;}
+.nav ul li{text-indent:25px;line-height:30px;height:30px; width:180px; background:url(treePackCurrent.gif) no-repeat 66px 8px;}
+.nav ul li a:active,.nav ul li a:hover{height:30px; width:208px;display:block;border:none;}/*background:#EDEDEE url(treePackCurrent.gif) no-repeat 15px 8px;*/
+.nav a:active,.nav a:hover{height:30px; width:218px;display:block;border:none;margin-left:-16px;text-indent:31px;} /* background:#EDEDEE url(treePackCurrent.gif) no-repeat 18px 8px; */
+
+a{ color:#004472; text-decoration:none; }
+a:hover{color:#004472;}
+.main{border:#c3cfcd 1px solid; margin:0px 5px 5px; height:1000px;}
+.main_left{background:#ededee;line-height:30px; height:30px; color:#000; border-bottom:#c3cfcd 1px solid;
+font-weight:bold; font-size:14px; padding-left:20px; margin-bottom:10px;"}

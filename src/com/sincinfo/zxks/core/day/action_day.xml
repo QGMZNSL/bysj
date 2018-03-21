@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "struts-2.0.dtd">
+<struts>	
+	<package name="dailywork" extends="struts-default" namespace="/day/dailywork">
+		<!-- 考生管理 add by litian 2012-02-13 -->
+		<action name="studMgr_*"  class="com.sincinfo.zxks.core.day.dailywork.StudentInfoMgrAction" method="{1}">
+			<result name="studentsShow">/manager/day/dailywork/studentManager.jsp</result>
+			<result name="studentEdit">/manager/day/dailywork/studentManagerEdit.jsp</result>
+			<result name="studentPhotoGather">/manager/day/dailywork/studPhoto/phoGather.jsp</result>
+		</action>
+		
+		<!-- 考生管理 add by litian 2012-02-13 -->
+		<action name="studAudit_*"  class="com.sincinfo.zxks.core.day.dailywork.StudChangeAuditAction" method="{1}">
+			<result name="changesShow">/manager/day/dailywork/studentManagerAudit.jsp</result>
+		</action>
+		
+		<!-- 考籍开关管理 -->
+		<action name="staSwch_*"  class="com.sincinfo.zxks.core.day.dailywork.StatusSettingAction" method="{1}">
+			<result name="showSwitches">/manager/day/dailywork/transServiceSwitch.jsp</result>
+			<result name="showNotice">/manager/day/dailywork/transServiceNoticeSct.jsp</result>
+		</action>
+		
+		<!-- 考生查询 add by litian 2012-05-14 -->
+		<action name="studQry_*"  class="com.sincinfo.zxks.core.day.dailywork.StudentQueryAction" method="{1}">
+			<result name="studentShow">/manager/day/dailywork/studentShow.jsp</result>
+			<result name="studentHistory">/manager/day/dailywork/studentExamHistory.jsp</result>
+		</action>
+	</package>	
+	
+	<package name="dailywork2" extends="struts-default" namespace="/manager/day/dailywork">
+		<!-- 考生基本信息变更记录 studentChangeRecord -->
+		<action name="studcr_*" class="com.sincinfo.zxks.core.day.dailywork.StudentChangeRecordAct" method="{1}" >
+			<result name="manager" >/manager/day/dailywork/studentChangeRecord.jsp</result>
+			<result name="show">/manager/day/dailywork/studentChangeRecordShow.jsp</result>
+		</action>
+		<!-- 证书查询  日常维护中的 -->
+		<action name="c_*" class="com.sincinfo.zxks.core.day.dailywork.CertificateAction" method="{1}">
+			<result name="manager" >/manager/day/dailywork/certificate.jsp</result>
+			<result name="query" >/manager/day/dailywork/certificateQuery.jsp</result>
+			<!-- add by litian 2012-06-07 -->
+			<result name="queryXLWP" >/manager/day/dailywork/certificateXLWP.jsp</result>
+			<result name="queryXLWPShow" >/manager/day/dailywork/certificateXLWPShow.jsp</result>
+			<result name="query2003CJCX" >/manager/day/dailywork/certificate2003CJCX.jsp</result>
+			<result name="query2003CJCXShow" >/manager/day/dailywork/certificate2003CJCXShow.jsp</result>
+		</action>
+		<!-- 考生违纪处理 -->
+		<action name="ssd_*" class="com.sincinfo.zxks.core.day.dailywork.StudScoreDisableAction" method="{1}">
+			<result name="manager" >/manager/day/dailywork/studScoreDisable.jsp</result>
+			<result name="seleSyll" >/manager/day/dailywork/sctSubject.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 考生基本信息查询显示-->
+	<package name="studentinfo" extends="struts-default" namespace="/">
+		<action name="studinfo_*" class="com.sincinfo.zxks.core.day.dailywork.StudentInfoShowAct" method="{1}" >
+			<result name="ok" >/manager/commoninfo/studentInfo.jsp</result>
+		</action>
+	</package>
+	
+	<package name="datapreserve" extends="struts-default" namespace="/day/datapreserve">
+		<!-- 部门、职位管理 -->
+		<action name="pstMgr_*"  class="com.sincinfo.zxks.core.day.datapreserve.PositionAction" method="{1}">
+			<result name="departmentsShow">/manager/day/datapreserve/departmentManager.jsp</result>
+			<result name="departmentAdd">/manager/day/datapreserve/departmentAdd.jsp</result>
+			<result name="departmentEdit">/manager/day/datapreserve/departmentEdit.jsp</result>
+			<result name="positionsShow">/manager/day/datapreserve/positionManager.jsp</result>
+		</action>
+		
+		<!-- 用户管理 -->
+		<action name="usrMgr_*"  class="com.sincinfo.zxks.core.day.datapreserve.UserMgrAction" method="{1}">
+			<result name="userList">/manager/day/datapreserve/userManager.jsp</result>
+			<result name="add">/manager/day/datapreserve/userManagerAdd.jsp</result>
+			<result name="edit">/manager/day/datapreserve/userManagerEdit.jsp</result>
+			<result name="power">/manager/day/datapreserve/purviewManager.jsp</result>
+		</action>
+		
+		<!-- 功能管理 -->
+		<action name="funcMgr_*"  class="com.sincinfo.zxks.core.day.datapreserve.FunctionMgrAction" method="{1}">
+			<result name="showCityAreas">/manager/day/datapreserve/baseFunctionManager.jsp</result>
+		</action>
+	</package>
+	
+	<package name="datapreserve3" extends="struts-default" namespace="/manager/day/datapreserve">
+		<!-- 对账功能, sc, 2012-03-06 -->
+		<action name="payStat_*" class="com.sincinfo.zxks.core.day.datapreserve.PayStatAction" method="{1}">
+			<result name="list">/manager/day/message/paystat_list.jsp</result>
+			<result name="list2">paystat/paystat2_list.jsp</result>
+			<result name="queryPay">/manager/day/datapreserve/accountManager.jsp</result>
+			<result name="yeepayStat">/manager/day/datapreserve/accountManager.jsp</result>
+			<result name="bulk_list">/manager/day/datapreserve/bulkPayList.jsp</result>
+			<result name="bulk_particular">/manager/day/datapreserve/bulkPayParticular.jsp</result>
+		</action>
+	</package>
+	
+		<package name="datapreserve2" extends="struts-default" namespace="/manager/day/datapreserve">
+			<!-- 登陆日志管理 -->
+			<action name="logLoader_*"  class="com.sincinfo.zxks.core.day.datapreserve.LogLoaderAction" method="{1}">
+				<result name="intoLog">/manager/day/datapreserve/LogLoader.jsp</result>
+			</action>
+			<!-- 生僻字管理 -->
+		<action name="strangeword_*"  class="com.sincinfo.zxks.core.day.datapreserve.StrangeWordAct" method="{1}">
+			<!-- 默认页 -->
+			<result name="manager">/manager/day/datapreserve/strangeWordManager.jsp</result>
+			<!-- to添加 -->
+			<result name="toaddok">/manager/day/datapreserve/strangeWordManagerAdd.jsp</result>
+			<!-- 搜索结果 -->
+			<result name="selectok">/manager/day/datapreserve/strangeWordManager.jsp</result>
+			<!-- to修改结果 -->
+			<result name="toeditok">/manager/day/datapreserve/strangeWordManagerEdit.jsp</result>
+		</action>
+		<!-- 证书查询管理 -->
+		<action name="qc_*"  class="com.sincinfo.zxks.core.day.datapreserve.CertificateManagerAction" method="{1}">
+			<!-- 默认页 -->				
+			<result name="manager">/manager/day/datapreserve/certificateManager.jsp</result>
+			<!-- to添加 -->
+			<result name="toadd">/manager/day/datapreserve/certificateManagerAdd.jsp</result>
+			<!-- to修改 -->
+			<result name="toedit">/manager/day/datapreserve/certificateManagerEdit.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 信息发布 -->
+	 <package name="message" extends="struts-default" namespace="/manager/day/message">
+		<!-- 信息管理   信息审核 -->		
+		<action name="message_*"  class="com.sincinfo.zxks.core.day.message.MessageAct" method="{1}">
+			<!-- 信息管理默认页 -->
+		    <result name="manager">/manager/day/message/messageManager.jsp</result>
+		    <!-- 前往增加页 -->
+			<result name="toadd">/manager/day/message/messageManagerAdd.jsp</result>
+			<!-- 信息管理查询结果页 -->
+			<result name="select">/manager/day/message/messageManager.jsp</result>
+			<!-- 后台得到新闻具体页 -->
+			<result name="query">/manager/day/message/messageQuery.jsp</result>
+			<!-- 前往修改页 -->	
+			<result name="toedit">/manager/day/message/messageManagerEdit.jsp</result>
+			<!-- 删除成功页 -->
+			<result name="deleteok" type="redirect">message_manager.do</result>	
+			<!-- 信息审核 -->	
+			<result name="issue">/manager/day/message/messageIssue.jsp</result>	
+			<!-- 弹出提示信息 并重定向 -->
+			<result name="ok">/manager/day/message/alert.jsp</result>
+			<!-- 信息审核查询结果 -->
+			<result name="issueselect">/manager/day/message/messageIssue.jsp</result>	
+		</action>
+		<!-- 须知管理 -->
+		<action name="information_*"  class="com.sincinfo.zxks.core.day.message.InformationAct" method="{1}">
+			<!-- 须知管理默认页 -->
+		    <result name="manager">/manager/day/message/noticeManager.jsp</result>
+		    <!-- to添加页面 -->
+		    <result name="toaddok">/manager/day/message/noticeManagerAdd.jsp</result>
+		    <!-- 查看详细页面 -->
+		     <result name="queryok">/manager/day/message/noticeQuery.jsp</result>
+		     <!-- to修改页 -->		  
+		     <result name="toeditok">/manager/day/message/noticeEdit.jsp</result>
+		</action>
+		<!-- 信息分类管理 -->
+		<action name="class_*" class="com.sincinfo.zxks.core.day.message.ClassAct" method="{1}">
+			<!-- 信息分类管理默认页 -->
+			<result name="manager">/manager/day/message/columnManager.jsp</result>
+			<!-- to添加页面 -->
+			<result name="toaddok">/manager/day/message/columnManagerAdd.jsp</result>
+			<!-- to修改页面 -->
+			<result name="toeditok">/manager/day/message/columnManagerEdit.jsp</result>
+		</action>
+		<action name ="sysFun_*" class="com.sincinfo.zxks.core.day.datapreserve.SysFunctionManagerAction" method="{1}">
+			<result name="intoSysFun">/manager/day/datapreserve/sysFunctionManager.jsp</result>
+			<result name="getTreeByMenuId">/manager/day/datapreserve/sysFunctionManager.jsp</result>
+			<result name="function">/manager/day/datapreserve/sysFunctionManager.jsp</result>
+		</action>
+		<action name ="address_*" class="com.sincinfo.zxks.core.day.datapreserve.MainTenanceAddressAction" method="{1}">
+			<result name="iniT">/manager/day/datapreserve/addressSet.jsp</result>
+			<result name="adD">/manager/day/datapreserve/addressAdd.jsp</result>
+			<result name="updateInfo">/manager/day/datapreserve/addressEdit.jsp</result>
+		</action>
+		<!-- 信息查询 -->
+		<action name="msel_*"  class="com.sincinfo.zxks.core.day.message.MessageSelectAction" method="{1}">
+			<!-- 信息管理默认页 -->
+		    <result name="{1}">/manager/day/message/msel_{1}.jsp</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "struts-2.0.dtd">
+<struts>	
+	<package name="/manager/camera" extends="struts-default" namespace="/manager/camera">
+		<!-- 摄像点管理 -->
+		<action name="cpm_*"  class="com.sincinfo.zxks.core.camera.CameraPlaceManageAction" method="{1}">
+			<result name="list">/manager/camera/cameraPlaceManager.jsp</result>
+			<result name="modifyPre">/manager/camera/cameraPlaceManagerEdit.jsp</result>
+			<result name="insertPre">/manager/camera/cameraPlaceManagerAdd.jsp</result>
+		</action>
+		<!-- 考生信息确认 -->
+		<action name="infoconfirm_*"  class="com.sincinfo.zxks.core.camera.InfoConfirmAction" method="{1}">
+			<result name="list">/manager/camera/studentInfoConfirm.jsp</result>
+			<result name="confirm">/manager/camera/examCodeShow.jsp</result>
+			<result name="print">/manager/camera/studentInfoPrint.jsp</result>
+		</action>
+		<!-- 照片采集 add by litian 2012-02-02 -->
+		<action name="pho_*"  class="com.sincinfo.zxks.core.camera.PhotoGatherAction" method="{1}">
+			<result name="chkIdcard">/manager/camera/photoInfoChkWithIdcard.jsp</result>
+			<result name="chkIdcardHtyt">/manager/camera/photoInfoHtyt.jsp</result>
+			<result name="chkIdcard_Hand">/manager/camera/ChkIdcardHand.jsp</result>
+			<result name="chkIdcard_Ok">/manager/camera/ChkIdcardOk.jsp</result>
+			<result name="chkIdcard_search">/manager/camera/ChkIdcardSearch.jsp</result>
+			<result name="chkIdcard_Wrong">/manager/camera/ChkIdcardWrong.jsp</result>
+			<result name="photoGather">/manager/camera/photo/phoGather.jsp</result>
+			<result name="showStudentInfo">/manager/camera/photoGather.jsp</result>
+			<result name="edit">/manager/camera/photoGatherEdit.jsp</result>
+		</action>
+	</package>
+</struts>

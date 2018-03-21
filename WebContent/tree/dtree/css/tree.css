@@ -1,0 +1,46 @@
+.dtree {
+	FONT-SIZE: 12px;
+	COLOR: #000;
+	FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	WHITE-SPACE: nowrap;
+	POSITION: relative;
+}
+
+.dtree IMG {
+	BORDER-RIGHT: 0px;
+	BORDER-TOP: 0px;
+	VERTICAL-ALIGN: text-bottom;
+	BORDER-LEFT: 0px;
+	BORDER-BOTTOM: 0px;
+}
+
+.dtree A {
+	TEXT-DECORATION: none;
+	color: #003299;
+}
+
+.dtree A:hover {
+	COLOR: #000;
+	TEXT-DECORATION: none;
+}
+
+.dtree .node {
+	PADDING-RIGHT: 1px;
+	PADDING-LEFT: 1px;
+	PADDING-BOTTOM: 1px;
+	COLOR: #000;
+	PADDING-TOP: 1px;
+	POSITION: relative;
+	TOP: -2px;
+}
+
+.dtree .nodeSel {
+	PADDING-RIGHT: 1px;
+	PADDING-LEFT: 1px;
+	PADDING-BOTTOM: 1px;
+	COLOR: #000;
+	PADDING-TOP: 1px;
+	POSITION: relative;
+	TOP: -2px;
+	BACKGROUND-COLOR: #c0d2ec;
+}

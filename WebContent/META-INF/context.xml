@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+	<Resource auth="Container" description="DB Connection"
+		driverClass="oracle.jdbc.driver.OracleDriver" name="jndiszxksds"
+		minPoolSize="2" acquireIncrement="2" maxPoolSize="40" user="zxks"
+		password="123456" factory="org.apache.naming.factory.BeanFactory"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		jdbcUrl="jdbc:oracle:thin:@192.168.1.112:1521:ZIKAO" />
+	<!-- jdbcUrl="jdbc:oracle:thin:@192.168.1.9:1521:MYZXKS" /> -->
+</Context>
